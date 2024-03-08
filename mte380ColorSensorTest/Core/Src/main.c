@@ -155,7 +155,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
 	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
 	while (__HAL_TIM_GET_COUNTER (&htim1) < 10);  // wait for 10 us
@@ -173,6 +172,7 @@ int main(void)
 
 	sprintf(gu8_MSG, "Distance = %lu m\n\r", distance);
 	HAL_UART_Transmit(&huart2, gu8_MSG, sizeof(gu8_MSG), 100);
+	/* USER CODE END WHILE */
 
 	/* USER CODE BEGIN 3 */
   }
